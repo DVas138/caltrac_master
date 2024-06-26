@@ -1,0 +1,6 @@
+.progress-ring__circle {
+    transition: stroke-dashoffset 1.35s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    color: rgb(99 102 241);
+}

@@ -1,0 +1,15 @@
+.circular-progress {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #ddd;
+}
+
+.progress {
+    width: 70%; /* Adjust as needed */
+    height: 100%;
+    background-color: blue;
+    clip-path: circle(at 50% 50%);
+    transition: width 1s ease-in-out;
+}
