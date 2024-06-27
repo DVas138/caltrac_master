@@ -84,17 +84,13 @@ export default function Settings() {
   // @ts-ignore
   const [user, setUser] = useState<any>(data.data);
   return (
-    <main className="w-full bg-gradient-to-r from-purple-500 to-pink-500">
+    <main className="w-full h-full bg-gradient-to-r from-purple-500 to-pink-500">
       <Form method="POST" className="w-11/12 m-auto">
         <div className="space-y-12">
           <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-4xl font-semibold leading-7 text-gray-50">
               Profile
             </h2>
-            <p className="mt-1 text-bold leading-6 text-gray-50">
-              This your personal information will stored in the database.
-            </p>
-
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div className="sm:col-span-4">
                 <label

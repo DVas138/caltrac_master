@@ -35,7 +35,7 @@ export default function ProgressBar({
           cy="50"
           r="45"
           fill="transparent"
-          strokeDasharray="251.2"
+          strokeDasharray="282.7"
           strokeDashoffset={circular}
         ></circle>
 

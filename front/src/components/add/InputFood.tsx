@@ -4,60 +4,7 @@ import ViewFinder from "./ViewFInder.tsx";
 import { useState } from "react";
 import ManualInput from "./ManualInpt.tsx";
 import { json, redirect, useSubmit } from "react-router-dom";
-const imgaURL =
-  "https://cdn.builder.io/api/v1/image/assets/TEMP/51b7ebbc737afcfa9f8cb1b8dc3c8bf47cc1ae3f3bf3bbe2729d45e260474a5e?apiKey=ea474bbdb6aa47209952665d35262dd2&";
-// const foodImages = [
-//   {
-//     src: "https://cdn.builder.io/api/v1/image/assets/TEMP/51b7ebbc737afcfa9f8cb1b8dc3c8bf47cc1ae3f3bf3bbe2729d45e260474a5e?apiKey=ea474bbdb6aa47209952665d35262dd2&",
-//     alt: "Food Image 1",
-//   },
-//   {
-//     src: "https://cdn.builder.io/api/v1/image/assets/TEMP/51b7ebbc737afcfa9f8cb1b8dc3c8bf47cc1ae3f3bf3bbe2729d45e260474a5e?apiKey=ea474bbdb6aa47209952665d35262dd2&",
-//     alt: "Food Image 2",
-//   },
-//   {
-//     src: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&",
-//     alt: "Food Image 3",
-//   },
-//   {
-//     src: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&",
-//     alt: "Food Image 4",
-//   },
-//   {
-//     src: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&",
-//     alt: "Food Image 4",
-//   },
-//   {
-//     src: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&",
-//     alt: "Food Image 4",
-//   },
-//   {
-//     src: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&",
-//     alt: "Food Image 4",
-//   },
-//   {
-//     src: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&",
-//     alt: "Food Image 4",
-//   },
-//   {
-//     src: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&",
-//     alt: "Food Image 4",
-//   },
-// ];
-// function getCard(food: string, calories: number) {
-//   return (
-//     <FoodCard name={food} calories={calories}>
-//       <img
-//         src={
-//           "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&"
-//         }
-//         alt={"Food Image 4"}
-//         className="shrink-0 aspect-square w-[51px] ml-4 mt-4 rounded-2xl hover:scale-105 hover:bg-danger-600"
-//         //TODO: Add Delete Listener to remove the food from the scanned food list
-//       />
-//     </FoodCard>
-//   );
-// }
+import imgURL from "../../../public/food_cover.svg";
 
 export type Food = {
   name: string;
@@ -95,22 +42,7 @@ export async function action({ request }: { request: Request }) {
 export default function InputFood() {
   //TODO: Add State for Scanned Food it will be and array of objects and it will be updated by the answer from the scan data
   // request. State would be initialized form the today document if it exists.
-  const [scannedFood, setScannedFood] = useState<Food[]>([
-    {
-      name: "Pizza",
-      calories: 200,
-      img: imgaURL,
-      amount: 0,
-      barcode: 1111111111111,
-    },
-    {
-      name: "Beef",
-      calories: 300,
-      img: imgaURL,
-      amount: 0,
-      barcode: 1111111111111,
-    },
-  ]);
+  const [scannedFood, setScannedFood] = useState<Food[]>([]);
   const [ready, setReady] = useState(false);
   const [mode, setMode] = useState<"scan" | "manual">("scan");
   const [card, setCard] = useState<Food>({
@@ -180,7 +112,7 @@ export default function InputFood() {
                 <img
                   src={food.img}
                   alt={`Food with ${food.calories} calories`}
-                  className="shrink-0 aspect-square"
+                  className="shrink-0 aspect-square size-16 bg-gray-500 bg-opacity-70 p-0.5 rounded-2xl"
                 />
               </FoodCard>
             ))}
@@ -288,11 +220,9 @@ export default function InputFood() {
                 onFilter={filterFood}
               >
                 <img
-                  src={
-                    "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&"
-                  }
+                  src={imgURL}
                   alt={"Food Image 4"}
-                  className="shrink-0 aspect-square"
+                  className="shrink-0 aspect-square size-16 bg-gray-500 bg-opacity-70 p-0.5 rounded-2xl"
                 />
               </FoodCard>
               <button
