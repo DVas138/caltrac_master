@@ -14,10 +14,13 @@ export default function ManualInput({
   const amount = useRef<HTMLInputElement>(null);
 
   return (
-    <div>
+    <div
+      className="p-4 border-4 border-dotted border-orange-400 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
+      // style={{ boxShadow: "inset 0 0 0 5px green" }}
+    >
       <label
         htmlFor="barcode"
-        className="block text-sm font-medium leading-6 text-gray-900"
+        className="block text-bold font-medium leading-6 text-gray-50"
       >
         Barcode
       </label>
@@ -31,10 +34,12 @@ export default function ManualInput({
           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
         />
       </div>
-      <h3>OR</h3>
+      <h3 className="block text-bold text-center font-medium leading-6 text-gray-50">
+        OR
+      </h3>
       <label
         htmlFor="name"
-        className="block text-sm font-medium leading-6 text-gray-900"
+        className="block text-bold font-medium leading-6 text-gray-50"
       >
         Food Name
       </label>
@@ -50,7 +55,7 @@ export default function ManualInput({
       </div>
       <label
         htmlFor="calories"
-        className="block text-sm font-medium leading-6 text-gray-900"
+        className="block text-bold font-medium leading-6 text-gray-50"
       >
         Calories
       </label>
@@ -64,10 +69,10 @@ export default function ManualInput({
           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
         />
       </div>
-      <div>
+      <div className="mb-8">
         <label
           htmlFor="amount"
-          className="block text-sm font-medium leading-6 text-gray-900"
+          className="block text-bold font-medium leading-6 text-gray-50"
         >
           Set Amount in Grams
         </label>
@@ -83,7 +88,7 @@ export default function ManualInput({
         </div>
       </div>
       <button
-        className="mx-auto mb-8 size-fit px-10 bg-green-200 hover:bg-green-700 text-gray-500 hover:text-gray-200 font-bold py-2 rounded"
+        className="ml-4  mb-8 size-fit px-10 bg-green-200 hover:bg-green-700 text-gray-500 hover:text-gray-200 font-bold py-2 rounded"
         onClick={async () => {
           if (
             barcode.current &&
@@ -95,7 +100,13 @@ export default function ManualInput({
               // `https://world.openfoodfacts.net/api/v2/product/3800748060642?fields=product_name,brands,nutriments,nutriscore_data`,
             );
             const data = await response.json();
-            console.log(data);
+            console.log("Manual input data", data);
+            data.product.brands = data.product.brands
+              ? data.product.brands
+              : "";
+            data.product.product_name = data.product.product_name
+              ? data.product.product_name
+              : "";
             onScan({
               name: data.product.product_name + " " + data.product.brands,
               calories:

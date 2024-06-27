@@ -36,7 +36,16 @@ export async function getDay(req: Request, res: Response) {
       },
       take: 7,
     });
-    console.log(pastDays, today, caloriesGoal, day);
+    console.log(
+      "past",
+      pastDays,
+      "date",
+      today,
+      "cals",
+      caloriesGoal,
+      "today",
+      day,
+    );
     if (day && pastDays && caloriesGoal) {
       res.status(201).json({
         status: true,

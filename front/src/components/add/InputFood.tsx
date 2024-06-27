@@ -133,29 +133,13 @@ export default function InputFood() {
     setScannedFood(scannedFood.filter((item) => item.name !== food));
   }
   return (
-    <main className="flex flex-row gap-5 justify-between mx-auto my-16 w-screen ">
+    <main className="flex flex-row gap-5 justify-between mx-auto bg-gradient-to-r from-purple-500 to-pink-500 w-screen ">
       <section className="flex flex-col justify-between items-center m-auto h-full lg:min-w-[1000px]">
-        <button
-          className="mx-auto mb-8 size-fit px-10 bg-green-200 hover:bg-green-700 text-gray-500 hover:text-gray-200 font-bold py-2 rounded"
-          onClick={() => {
-            setType("day");
-          }}
-        >
-          As Day
-        </button>
-        <button
-          className="mx-auto mb-8 size-fit px-10 bg-green-200 hover:bg-green-700 text-gray-500 hover:text-gray-200 font-bold py-2 rounded"
-          onClick={() => {
-            setType("recipe");
-          }}
-        >
-          As Recipe
-        </button>
         {type === "recipe" ? (
           <div className="mb-4">
             <label
               htmlFor="recipe"
-              className="block text-sm font-medium leading-6 text-gray-900"
+              className="block text-bold text-center font-medium leading-6 text-gray-50"
             >
               Recipe Name
             </label>
@@ -166,7 +150,7 @@ export default function InputFood() {
                 type="text"
                 autoComplete="number"
                 value={recipe.name}
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-xl border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
                 onInput={(e) => {
                   setRecipe({ ...recipe, name: e.currentTarget.value });
                 }}
@@ -174,8 +158,17 @@ export default function InputFood() {
             </div>
           </div>
         ) : null}
-        <article className="flex flex-row px-4 pt-3.5 pb-7 mb-16 w-fit rounded-2xl shadow-sm backdrop-blur-[2px] bg-white bg-opacity-70 ">
-          <div className="flex flex-col flex-wrap justify-center w-full gap-1 max-h-[60vh]">
+        <article className="flex flex-row items-center px-4 pt-3.5 pb-7 mb-16 w-fit rounded-2xl shadow-sm backdrop-blur-[2px] bg-white bg-opacity-70 ">
+          <button
+            className="size-fit px-10 mr-3.5 bg-orange-400 text-gray-50 hover:bg-orange-200  hover:text-gray-500 font-bold py-2 rounded"
+            onClick={() => {
+              setType("day");
+            }}
+          >
+            As Day
+          </button>
+
+          <div className="flex flex-col flex-wrap align-middle gap-1 p-2.5 border-dotted border-4 border-orange-400  rounded-2xl min-w-72 min-h-52 max-h-[60vh]">
             {scannedFood.map((food) => (
               <FoodCard
                 key={food.calories}
@@ -187,18 +180,25 @@ export default function InputFood() {
                 <img
                   src={food.img}
                   alt={`Food with ${food.calories} calories`}
-                  className="shrink-0 aspect-square w-[51px] ml-4 mt-4 rounded-2xl hover:scale-105 hover:bg-danger-600"
-                  //TODO: Add Delete Listener to remove the food from the scanned food list
+                  className="shrink-0 aspect-square"
                 />
               </FoodCard>
             ))}
           </div>
+          <button
+            className=" size-fit px-10 ml-3.5 bg-orange-400 text-gray-50 hover:bg-orange-200  hover:text-gray-500 font-bold py-2 rounded"
+            onClick={() => {
+              setType("recipe");
+            }}
+          >
+            As Recipe
+          </button>
         </article>
         {type === "recipe" ? (
           <div className="mb-4">
             <label
               htmlFor="servings"
-              className="block text-sm font-medium leading-6 text-gray-900"
+              className="block text-bold text-center font-medium leading-6 text-gray-50"
             >
               How servings you get?
             </label>
@@ -209,7 +209,7 @@ export default function InputFood() {
                 type="number"
                 autoComplete="number"
                 value={recipe.servings}
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-xl border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
                 onInput={(e) => {
                   setRecipe({
                     ...recipe,
@@ -223,7 +223,7 @@ export default function InputFood() {
           <div className="mb-4">
             <label
               htmlFor="weight"
-              className="block text-sm font-medium leading-6 text-gray-900"
+              className="block text-bold text-center font-medium leading-6 text-gray-50"
             >
               How much did you weight today?
             </label>
@@ -234,7 +234,7 @@ export default function InputFood() {
                 type="number"
                 autoComplete="number"
                 value={weight}
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-xl border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
                 onInput={(e) => {
                   setWeight(e.currentTarget.valueAsNumber);
                 }}
@@ -243,7 +243,7 @@ export default function InputFood() {
           </div>
         )}
         <button
-          className="mx-auto mb-8 size-fit px-10 bg-green-200 hover:bg-green-700 text-gray-500 hover:text-gray-200 font-bold py-2 rounded"
+          className="size-fit px-16  bg-orange-400 text-gray-50 hover:bg-orange-200  hover:text-gray-500 font-bold py-2 rounded-2xl mb-11"
           onClick={() => {
             submit(
               {
@@ -270,60 +270,65 @@ export default function InputFood() {
         {/*  //   console.log(`Scan result: ${decodedText}`, decodedResult);*/}
         {/*  // }}*/}
         {/*/>*/}
-        <button
-          className="mx-auto mb-8 size-fit px-10 bg-green-200 hover:bg-green-700 text-gray-500 hover:text-gray-200 font-bold py-2 rounded"
-          onClick={() => setMode("scan")}
-        >
-          Scan
-        </button>
-        <button
-          className="mx-auto mb-8 size-fit px-10 bg-green-200 hover:bg-green-700 text-gray-500 hover:text-gray-200 font-bold py-2 rounded"
-          onClick={() => setMode("manual")}
-        >
-          Manual
-        </button>
-        {ready ? (
-          <>
-            <FoodCard
-              name={card.name}
-              calories={card.calories}
-              amount={card.amount}
-              onFilter={filterFood}
-            >
-              <img
-                src={
-                  "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&"
-                }
-                alt={"Food Image 4"}
-                className="shrink-0 aspect-square w-[51px] ml-4 mt-4 rounded-2xl hover:scale-105 hover:bg-danger-600"
-                //TODO: Add Delete Listener to remove the food from the scanned food list
-              />
-            </FoodCard>
+        <div className="flex mb-11 items-center">
+          {!ready ? (
             <button
-              className="mx-auto mb-8 size-fit px-10 bg-green-200 hover:bg-green-700 text-gray-500 hover:text-gray-200 font-bold py-2 rounded"
-              onClick={() => {
-                setScannedFood([...scannedFood, card]);
-                setReady(false);
-              }}
+              className=" size-fit px-16 text-xl py-4 mr-3.5 bg-orange-400 text-gray-50 hover:bg-orange-200  hover:text-gray-500 font-bold rounded"
+              onClick={() => setMode("scan")}
             >
-              Approve
+              Scan
             </button>
+          ) : null}
+          {ready ? (
+            <div className="flex flex-col">
+              <FoodCard
+                name={card.name}
+                calories={card.calories}
+                amount={card.amount}
+                onFilter={filterFood}
+              >
+                <img
+                  src={
+                    "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&"
+                  }
+                  alt={"Food Image 4"}
+                  className="shrink-0 aspect-square"
+                />
+              </FoodCard>
+              <button
+                className="mx-auto my-8 size-fit px-10 bg-green-200 hover:bg-green-700 text-gray-500 hover:text-gray-200 font-bold py-2 rounded"
+                onClick={() => {
+                  setScannedFood([...scannedFood, card]);
+                  setReady(false);
+                }}
+              >
+                Approve
+              </button>
+              <button
+                className="mx-auto mb-8 size-fit px-10 bg-red-200 hover:bg-green-700 text-gray-500 hover:bg-red-500 hover:text-gray-200 font-bold py-2 rounded"
+                onClick={() => {
+                  setReady(false);
+                }}
+              >
+                Deny
+              </button>
+            </div>
+          ) : mode === "scan" ? (
+            <>
+              <ViewFinder onScan={setCard} onReady={setReady} />
+            </>
+          ) : (
+            <ManualInput onScan={setCard} onReady={setReady} />
+          )}
+          {!ready ? (
             <button
-              className="mx-auto mb-8 size-fit px-10 bg-red-200 hover:bg-green-700 text-gray-500 hover:text-gray-200 font-bold py-2 rounded"
-              onClick={() => {
-                setReady(false);
-              }}
+              className=" size-fit px-16 text-xl py-4 ml-3.5 bg-orange-400 text-gray-50 hover:bg-orange-200  hover:text-gray-500 font-bold rounded"
+              onClick={() => setMode("manual")}
             >
-              Deny
+              Manual
             </button>
-          </>
-        ) : mode === "scan" ? (
-          <>
-            <ViewFinder onScan={setCard} onReady={setReady} />
-          </>
-        ) : (
-          <ManualInput onScan={setCard} onReady={setReady} />
-        )}
+          ) : null}
+        </div>
       </section>
     </main>
   );

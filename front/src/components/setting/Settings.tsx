@@ -84,35 +84,34 @@ export default function Settings() {
   // @ts-ignore
   const [user, setUser] = useState<any>(data.data);
   return (
-    <main className="w-11/12 m-auto">
-      <Form method="POST">
+    <main className="w-full bg-gradient-to-r from-purple-500 to-pink-500">
+      <Form method="POST" className="w-11/12 m-auto">
         <div className="space-y-12">
           <div className="border-b border-gray-900/10 pb-12">
-            <h2 className="text-base font-semibold leading-7 text-gray-900">
+            <h2 className="text-4xl font-semibold leading-7 text-gray-50">
               Profile
             </h2>
-            <p className="mt-1 text-sm leading-6 text-gray-600">
-              This information will be displayed publicly so be careful what you
-              share.
+            <p className="mt-1 text-bold leading-6 text-gray-50">
+              This your personal information will stored in the database.
             </p>
 
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div className="sm:col-span-4">
                 <label
                   htmlFor="username"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-bold font-medium leading-6 text-gray-50"
                 >
                   Username
                 </label>
                 <div className="mt-2">
-                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                  <div className="flex rounded-xl shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                       type="text"
                       name="username"
                       id="username"
                       value={user.username}
                       autoComplete="username"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-50 placeholder:text-gray-50 focus:ring-orange-400 sm:text-bold sm:leading-6"
                       placeholder="Your Username"
                       onInput={(event) => {
                         setUser({
@@ -127,18 +126,18 @@ export default function Settings() {
               <div className="sm:col-span-4">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-bold font-medium leading-6 text-gray-50"
                 >
                   Email Address
                 </label>
                 <div className="mt-2">
-                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                  <div className="flex rounded-xl shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                       type="email"
                       name="email"
                       id="email"
                       autoComplete="email"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-50 placeholder:text-gray-50 focus:ring-orange-400 sm:text-bold sm:leading-6"
                       placeholder="Your Email Address"
                       value={user.email}
                       onInput={(event) => {
@@ -154,18 +153,18 @@ export default function Settings() {
               <div className="sm:col-span-4">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-bold font-medium leading-6 text-gray-50"
                 >
                   Password
                 </label>
                 <div className="mt-2">
-                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                  <div className="flex rounded-xl shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                       type="password"
                       name="password"
                       id="password"
                       autoComplete="password"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-50 placeholder:text-gray-50 focus:ring-orange-400 sm:text-bold sm:leading-6"
                       placeholder="At least one Upper letter, Special Symbol, Number "
                       onInput={(event) => {
                         setUser({
@@ -180,18 +179,18 @@ export default function Settings() {
               <div className="sm:col-span-4">
                 <label
                   htmlFor="passwordRep"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-bold font-medium leading-6 text-gray-50"
                 >
                   Again Password
                 </label>
                 <div className="mt-2">
-                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                  <div className="flex rounded-xl shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                       type="password"
                       name="passwordRep"
                       id="passwordRep"
                       autoComplete="passwordRep"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-50 placeholder:text-gray-50 focus:ring-orange-400 sm:text-bold sm:leading-6"
                       placeholder="At least one Upper letter, Special Symbol, Number "
                       onInput={(event) => {
                         setUser({
@@ -207,14 +206,14 @@ export default function Settings() {
           </div>
 
           <div className="border-b border-gray-900/10 pb-12">
-            <h2 className="text-base font-semibold leading-7 text-gray-900">
+            <h2 className="text-base font-semibold leading-7 text-gray-50">
               Personal Information
             </h2>
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div className="sm:col-span-3">
                 <label
                   htmlFor="age"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-bold font-medium leading-6 text-gray-50"
                 >
                   Age
                 </label>
@@ -225,7 +224,7 @@ export default function Settings() {
                     id="age"
                     autoComplete="age"
                     placeholder="Greater than 12 years"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-xl border-0 py-1.5 text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-50 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-bold sm:leading-6"
                     value={user.age}
                     onInput={(event) => {
                       setUser({
@@ -240,7 +239,7 @@ export default function Settings() {
               <div className="sm:col-span-3">
                 <label
                   htmlFor="weight"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-bold font-medium leading-6 text-gray-50"
                 >
                   Weight (kg)
                 </label>
@@ -250,7 +249,7 @@ export default function Settings() {
                     name="weight"
                     id="weight"
                     autoComplete="weight"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-xl border-0 py-1.5 text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-50 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-bold sm:leading-6"
                     value={user.weight}
                     onInput={(event) => {
                       setUser({
@@ -264,7 +263,7 @@ export default function Settings() {
               <div className="sm:col-span-3">
                 <label
                   htmlFor="height"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-bold font-medium leading-6 text-gray-50"
                 >
                   Height (cm)
                 </label>
@@ -274,7 +273,7 @@ export default function Settings() {
                     name="height"
                     id="height"
                     autoComplete="height"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-xl border-0 py-1.5 text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-50 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-bold sm:leading-6"
                     value={user.height}
                     onInput={(event) => {
                       setUser({
@@ -289,7 +288,7 @@ export default function Settings() {
               <div className="sm:col-span-3">
                 <label
                   htmlFor="sex"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-bold font-medium leading-6 text-gray-50"
                 >
                   Gender
                 </label>
@@ -298,7 +297,7 @@ export default function Settings() {
                     id="sex"
                     name="sex"
                     autoComplete="sex"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                    className="block w-full rounded-xl border-0 py-1.5 text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-bold sm:leading-6"
                   >
                     <option value={1} selected={user.sex === 1}>
                       Male
@@ -310,14 +309,14 @@ export default function Settings() {
                 </div>
               </div>
               <fieldset>
-                <legend className="text-base font-semibold leading-6 text-gray-900">
+                <legend className="text-base font-semibold leading-6 text-gray-50">
                   Weight Goals
                 </legend>
                 <div className="mt-6 space-y-6">
                   <div className="flex items-center gap-x-3">
                     <label
                       htmlFor="maintain"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="block text-bold font-medium leading-6 text-gray-50"
                     >
                       Maintain
                     </label>
@@ -326,13 +325,13 @@ export default function Settings() {
                       name="calGoal"
                       value={0}
                       type="radio"
-                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-orange-600"
                     />
                   </div>
                   <div className="flex items-center gap-x-3">
                     <label
                       htmlFor="mildloss"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="block text-bold font-medium leading-6 text-gray-50"
                     >
                       Mild Loss (0.25 kg/week)
                     </label>
@@ -341,13 +340,13 @@ export default function Settings() {
                       name="calGoal"
                       value={0.9}
                       type="radio"
-                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-orange-600"
                     />
                   </div>
                   <div className="flex items-center gap-x-3">
                     <label
                       htmlFor="loss"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="block text-bold font-medium leading-6 text-gray-50"
                     >
                       Loss (0.5 kg/week)
                     </label>
@@ -356,13 +355,13 @@ export default function Settings() {
                       name="calGoal"
                       value={0.79}
                       type="radio"
-                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-orange-600"
                     />
                   </div>
                   <div className="flex items-center gap-x-3">
                     <label
                       htmlFor="extremeloss"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="block text-bold font-medium leading-6 text-gray-50"
                     >
                       Extreme Loss (1 kg/week)
                     </label>
@@ -371,13 +370,13 @@ export default function Settings() {
                       name="calGoal"
                       value={0.59}
                       type="radio"
-                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-orange-600"
                     />
                   </div>{" "}
                   <div className="flex items-center gap-x-3">
                     <label
                       htmlFor="mildgain"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="block text-bold font-medium leading-6 text-gray-50"
                     >
                       Mild Gain (0.25 kg/week)
                     </label>
@@ -386,13 +385,13 @@ export default function Settings() {
                       name="calGoal"
                       value={1.1}
                       type="radio"
-                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-orange-600"
                     />
                   </div>
                   <div className="flex items-center gap-x-3">
                     <label
                       htmlFor="gain"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="block text-bold font-medium leading-6 text-gray-50"
                     >
                       Gain (0.5 kg/week)
                     </label>
@@ -401,13 +400,13 @@ export default function Settings() {
                       name="calGoal"
                       value={1.21}
                       type="radio"
-                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-orange-600"
                     />
                   </div>
                   <div className="flex items-center gap-x-3">
                     <label
                       htmlFor="extremegain"
-                      className="block text-sm font-medium leading-6 text-gray-900"
+                      className="block text-bold font-medium leading-6 text-gray-50"
                     >
                       Extreme Gain (1 kg/week)
                     </label>
@@ -416,7 +415,7 @@ export default function Settings() {
                       name="calGoal"
                       value={1.41}
                       type="radio"
-                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-orange-600"
                     />
                   </div>
                 </div>
@@ -426,14 +425,14 @@ export default function Settings() {
 
           <div className="border-b border-gray-900/10 pb-12">
             <fieldset>
-              <legend className="text-base font-semibold leading-6 text-gray-900">
+              <legend className="text-base font-semibold leading-6 text-gray-50">
                 Activity Levels
               </legend>
               <div className="mt-6 space-y-6">
                 <div className="flex items-center gap-x-3">
                   <label
                     htmlFor="sedenatry"
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                    className="block text-bold font-medium leading-6 text-gray-50"
                   >
                     Sedentary (no exercise)
                   </label>
@@ -443,13 +442,13 @@ export default function Settings() {
                     value={1.2}
                     type="radio"
                     checked={user.activity === 1.2}
-                    className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                    className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-orange-600"
                   />
                 </div>
                 <div className="flex items-center gap-x-3">
                   <label
                     htmlFor="lactivity"
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                    className="block text-bold font-medium leading-6 text-gray-50"
                   >
                     Lightly active (1-3 days/week)
                   </label>
@@ -459,13 +458,13 @@ export default function Settings() {
                     value={1.375}
                     type="radio"
                     checked={user.activity === 1.375}
-                    className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                    className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-orange-600"
                   />
                 </div>
                 <div className="flex items-center gap-x-3">
                   <label
                     htmlFor="mactivity"
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                    className="block text-bold font-medium leading-6 text-gray-50"
                   >
                     Moderately active (3-5 days/week)
                   </label>
@@ -475,13 +474,13 @@ export default function Settings() {
                     value={1.55}
                     type="radio"
                     checked={user.activity === 1.55}
-                    className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                    className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-orange-600"
                   />
                 </div>
                 <div className="flex items-center gap-x-3">
                   <label
                     htmlFor="vactivity"
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                    className="block text-bold font-medium leading-6 text-gray-50"
                   >
                     Active (6-7 days/week)
                   </label>
@@ -491,13 +490,13 @@ export default function Settings() {
                     value={1.725}
                     type="radio"
                     checked={user.activity === 1.725}
-                    className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                    className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-orange-600"
                   />
                 </div>{" "}
                 <div className="flex items-center gap-x-3">
                   <label
                     htmlFor="eactivity"
-                    className="block text-sm font-medium leading-6 text-gray-900"
+                    className="block text-bold font-medium leading-6 text-gray-50"
                   >
                     Very active (hard exercise 6–7 days/week)
                   </label>
@@ -507,7 +506,7 @@ export default function Settings() {
                     value={1.9}
                     type="radio"
                     checked={user.activity === 1.9}
-                    className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                    className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-orange-600"
                   />
                 </div>
               </div>
@@ -515,10 +514,10 @@ export default function Settings() {
           </div>
         </div>
 
-        <div className="mt-6 flex items-center justify-end gap-x-6">
+        <div className="my-6 mx-auto flex items-center justify-end gap-x-6">
           <button
             type="button"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="rounded-xl bg-red-500 px-3 py-2 text-bold font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 "
           >
             <Link to="/main/today">Cancel</Link>
           </button>
@@ -526,7 +525,7 @@ export default function Settings() {
             name="intent"
             value={1}
             type="submit"
-            className="rounded-md bg-lime-300 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="rounded-xl bg-lime-300 px-3 py-2 text-bold font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 "
           >
             Save
           </button>
@@ -534,7 +533,7 @@ export default function Settings() {
             name="intent"
             value={2}
             type="submit"
-            className="rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="rounded-xl justify-self-center bg-red-500 px-3 py-2 text-bold font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 "
           >
             Delete
           </button>

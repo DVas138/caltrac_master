@@ -22,6 +22,12 @@ export default function BarcodeScanner({
         // `https://world.openfoodfacts.net/api/v2/product/3800748060642?fields=product_name,brands,nutriments,nutriscore_data`,
       );
       const data = await response.json();
+      if (!data.product.product_name) {
+        data.product.product_name = " ";
+      }
+      if (!data.product.brands) {
+        data.product.brands = " ";
+      }
       onScan({
         name: data.product.product_name + " " + data.product.brands,
         calories: data.product.nutriments["energy-kcal_100g"] * (amount / 100),
@@ -31,22 +37,22 @@ export default function BarcodeScanner({
       });
       onReady(true);
 
-      console.log(
-        data.product.nutriments["energy-kcal_100g"],
-        data.product.product_name + " " + data.product.brands,
-      );
+      // console.log(
+      //   data.product.nutriments["energy-kcal_100g"],
+      //   data.product.product_name + " " + data.product.brands,
+      // );
     }
   }
   useEffect(() => {
     handleScan(result);
   }, [result]);
   return (
-    <>
-      <video ref={ref} />
-      <div>
+    <div>
+      <video className="rounded-2xl shadow-xl" ref={ref} />
+      <div className="mt-2">
         <label
           htmlFor="amount"
-          className="block text-sm font-medium leading-6 text-gray-900"
+          className="block text-bold text-center font-medium leading-6 text-gray-50"
         >
           Set Amount in Grams
         </label>
@@ -57,13 +63,13 @@ export default function BarcodeScanner({
             type="number"
             autoComplete="number"
             value={amount}
-            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            className="block w-1/2 mx-auto rounded-xl border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
             onInput={(e) => {
               setAmount(e.currentTarget.valueAsNumber);
             }}
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-export default function FooterItem() {
+export default function FooterItem({ text }: { text: string }) {
   return (
     <div className="flex gap-2.5">
       <img
@@ -6,7 +6,7 @@ export default function FooterItem() {
         alt="Special Footer Image 1"
         className="shrink-0 aspect-[1.1] w-[23px]"
       />
-      <span>Text</span>
+      <span>{text}</span>
     </div>
   );
 }

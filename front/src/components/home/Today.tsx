@@ -1,5 +1,5 @@
 import FoodCard from "../add/FoodCard.tsx";
-
+import img from "../../../public/food_cover.svg";
 const foodImages = [
   {
     src: "https://cdn.builder.io/api/v1/image/assets/TEMP/51b7ebbc737afcfa9f8cb1b8dc3c8bf47cc1ae3f3bf3bbe2729d45e260474a5e?apiKey=ea474bbdb6aa47209952665d35262dd2&",
@@ -33,7 +33,7 @@ const foodImages = [
 import HomeAside from "../aside/HomeAside.tsx";
 import ProgressBar from "./ProgressBar.tsx";
 import WeekChart from "./WeekChart.tsx";
-import { redirect, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 export async function getUserToday() {
   const response = await fetch("http://localhost:8000/today", {
@@ -43,7 +43,8 @@ export async function getUserToday() {
     },
   });
   if (!response.ok) {
-    redirect("add");
+    // console.log("Error");
+    throw new Error("Redirect");
   } else {
     return response;
   }
@@ -59,12 +60,12 @@ export default function Today() {
     todayData.days[todayData.days.length - 1].date,
   ];
   return (
-    <main className="flex flex-row gap-5 justify-between mx-auto my-16 w-screen max-md:mt-10 max-md:max-w-full">
+    <main className="flex flex-row gap-5 justify-between mx-auto w-screen max-md:mt-10 max-md:max-w-full bg-gradient-to-r from-purple-500 to-pink-500">
       <HomeAside week={week} />
-      <section className="flex flex-col justify-between m-auto h-full max-md:max-w-full">
-        <article className="flex flex-row px-16 pt-3.5 pb-7 mx-auto rounded-2xl shadow-sm backdrop-blur-[2px] bg-white bg-opacity-70 max-md:px-5 max-md:mr-2.5 max-md:max-w-full">
+      <section className="flex flex-col justify-between mx-auto my-16 max-md:max-w-full">
+        <article className="flex flex-row px-16 pt-3.5 pb-7 mx-auto mt-36 rounded-2xl shadow-sm backdrop-blur-[2px] bg-white bg-opacity-70 max-md:px-5 max-md:mr-2.5 max-md:max-w-full">
           <ProgressBar goals={todayData.goal} byNow={todayData.calories} />
-          <div className="flex flex-col grow text-2xl text-white whitespace-nowrap max-md:mt-10 max-md:max-w-full">
+          <div className="flex flex-col grow gap-2.5 text-2xl text-white whitespace-nowrap max-md:mt-10 max-md:max-w-full">
             {todayData.foods.map((food: any) => (
               <FoodCard
                 key={food.id}
@@ -74,9 +75,9 @@ export default function Today() {
                 onFilter={() => ({})}
               >
                 <img
-                  src={foodImages[0].src}
+                  src={img}
                   alt={foodImages[0].alt}
-                  className="shrink-0 aspect-square w-[51px]"
+                  className="shrink-0 aspect-square size-16 bg-gray-500 bg-opacity-70 p-0.5 rounded-2xl"
                 />
               </FoodCard>
             ))}

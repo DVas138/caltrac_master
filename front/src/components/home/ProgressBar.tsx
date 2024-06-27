@@ -7,7 +7,7 @@ export default function ProgressBar({
   byNow: number;
 }) {
   const progress = Math.round((byNow / goals) * 100);
-  const circular = 251.2 - (251.2 * progress) / 100;
+  const circular = 282.7 - (282.7 * progress) / 100;
   return (
     <div className="justify-center items-center self-stretch mx-8 m-auto w-full text-2xl text-black max-md:px-5 max-md:p-10 max-md:m-10">
       {/*//  The circumference of a circle is calculated with C = 2πr*/}
@@ -23,7 +23,7 @@ export default function ProgressBar({
           strokeWidth="10"
           cx="50"
           cy="50"
-          r="40"
+          r="45"
           fill="transparent"
         ></circle>
 
@@ -33,21 +33,38 @@ export default function ProgressBar({
           strokeLinecap="round"
           cx="50"
           cy="50"
-          r="40"
+          r="45"
           fill="transparent"
           strokeDasharray="251.2"
           strokeDashoffset={circular}
         ></circle>
 
         <text
-          x="50"
-          y="50"
+          x="52"
+          y="35"
           fontFamily="Verdana"
-          fontSize="12"
+          fontSize="15"
           textAnchor="middle"
           alignmentBaseline="middle"
         >
           {progress}%
+        </text>
+        <line
+          x1="18"
+          y1="49"
+          x2="79"
+          y2="49"
+          style={{ stroke: "red", strokeWidth: 3, strokeLinecap: "round" }}
+        />
+        <text
+          x="52"
+          y="63"
+          fontFamily="Verdana"
+          fontSize="13"
+          textAnchor="middle"
+          alignmentBaseline="middle"
+        >
+          {byNow} kcal
         </text>
       </svg>
       {/*</div>*/}

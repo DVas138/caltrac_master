@@ -29,7 +29,7 @@ export async function action({ request }: { request: any }) {
 export default function LogIn() {
   return (
     <>
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="flex h-screen bg-gradient-to-r from-purple-500 to-pink-500 flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             className="mx-auto h-10 w-auto scale-[2]"
@@ -93,11 +93,11 @@ export default function LogIn() {
             </div>
           </Form>
           {/*TODO: Add Link to Register*/}
-          <p className="mt-10 text-center text-sm text-gray-500">
+          <p className="mt-10 text-center text-sm text-gray-700">
             Not a member?
             <Link
               to="/register"
-              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+              className="font-semibold leading-6 text-gray-900 hover:text-indigo-500 ml-2"
             >
               Register here
             </Link>

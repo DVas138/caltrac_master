@@ -22,7 +22,7 @@ export default function WeekChart({ weekData }: any) {
     <ResponsiveContainer
       width="100%"
       height={400}
-      className="bg-zinc-100 py-8 rounded-b-2xl mb-28"
+      className="bg-zinc-100 py-8 rounded-b-2xl mb-20"
     >
       <LineChart
         width={700}
