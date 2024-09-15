@@ -160,7 +160,7 @@ export default function Register() {
                     id="age"
                     autoComplete="age"
                     placeholder="Greater than 12 years"
-                    className="block w-full rounded-xl border-0 py-1.5 text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-50 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-bold sm:leading-6"
+                    className="block w-full rounded-xl border-0 py-1.5 text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-bold sm:leading-6"
                   />
                 </div>
               </div>
@@ -178,7 +178,7 @@ export default function Register() {
                     name="weight"
                     id="weight"
                     autoComplete="weight"
-                    className="block w-full rounded-xl border-0 py-1.5 text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-50 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-bold sm:leading-6"
+                    className="block w-full rounded-xl border-0 py-1.5 text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-50 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-bold sm:leading-6"
                   />
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function Register() {
                     name="height"
                     id="height"
                     autoComplete="height"
-                    className="block w-full rounded-xl border-0 py-1.5 text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-50 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-bold sm:leading-6"
+                    className="block w-full rounded-xl border-0 py-1.5 text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-50 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-bold sm:leading-6"
                   />
                 </div>
               </div>
@@ -212,7 +212,7 @@ export default function Register() {
                     id="sex"
                     name="sex"
                     autoComplete="sex"
-                    className="block w-full rounded-xl border-0 py-1.5 text-gray-50 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-bold sm:leading-6"
+                    className="block w-full rounded-xl border-0 py-1.5 text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-bold sm:leading-6"
                   >
                     <option value={1}>Male</option>
                     <option value={2}>Female</option>
