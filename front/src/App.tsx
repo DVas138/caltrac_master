@@ -15,6 +15,7 @@ function App() {
 
   // @ts-ignore
   // @ts-ignore
+  // @ts-ignore
   return (
     // <NextUIProvider>
     //   <CircularProgress
@@ -63,6 +64,7 @@ function App() {
     <>
       <div
         className="radial-progress"
+        //@ts-ignore
         style={{ "--value": "70", "--size": "12rem", "--thickness": "2px" }}
         role="progressbar"
       >
@@ -70,6 +72,7 @@ function App() {
       </div>
       <div
         className="radial-progress"
+        //@ts-ignore
         style={{ "--value": "70", "--size": "12rem", "--thickness": "2rem" }}
         role="progressbar"
       >
