@@ -18,7 +18,7 @@
     "@types/react-router": "^5.1.20",
     "@types/react-router-dom": "^5.3.3",
     "nodemon": "^3.1.4",
-    "ts-node": "^10.9.2",
+
     "typescript": "^5.4.5"
   },
   "dependencies": {
@@ -29,6 +29,7 @@
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2",
     "express": "^4.19.2",
     "express-mongo-sanitize": "^2.2.0",
     "joi": "^17.13.3",
