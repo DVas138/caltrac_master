@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "startSever" : "cd back && npm run start",
     "installServer": "cd back && npm install",
-    "installClient": "cd front && npm install",
+    "installClient": "cd front && npm install --legacy-peer-deps",
     "buildClient" : "cd front && npm run build",
     "startClient" : "cd front && npm run dev"
   },
