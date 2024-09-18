@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "startSever" : "cd back && npm run start",
-    "installServer": "cd back && npm install",
+    "installServer": "cd back && npm install && npm build",
     "installClient": "cd front && npm install",
     "buildClient" : "cd front && npm run build",
     "startClient" : "cd front && npm run dev"
