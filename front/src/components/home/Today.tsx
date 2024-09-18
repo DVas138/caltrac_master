@@ -36,7 +36,7 @@ import WeekChart from "./WeekChart.tsx";
 import { useLoaderData } from "react-router-dom";
 
 export async function getUserToday() {
-  const response = await fetch("http://localhost:8000/today", {
+  const response = await fetch("https://kigokido.onrender.com/today", {
     method: "GET",
     headers: {
       Authorization: "bearer " + localStorage.getItem("userToken"),

@@ -7,7 +7,7 @@ export async function action({ request, params }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
   // console.log(formData.get("age"), data);
-  const response = await fetch("http://localhost:8000/user", {
+  const response = await fetch("https://kigokido.onrender.com/user", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

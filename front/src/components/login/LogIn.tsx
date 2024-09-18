@@ -11,7 +11,7 @@ export async function action({ request }: { request: any }) {
   const email = formData.get("email");
   const password = formData.get("password");
 
-  const response = await fetch("http://localhost:8000/user/login", {
+  const response = await fetch("https://kigokido.onrender.com/user/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

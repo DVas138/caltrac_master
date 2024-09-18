@@ -5,7 +5,7 @@ import { useState } from "react";
 
 // @ts-ignore
 export async function load({ request, params }) {
-  const response = await fetch("http://localhost:8000/user/", {
+  const response = await fetch("https://kigokido.onrender.com/user/", {
     method: "GET",
     headers: {
       Authorization: "bearer " + localStorage.getItem("userToken"),
@@ -28,7 +28,7 @@ export async function action({ request }: { request: any }) {
   console.log(intent);
   const data = Object.fromEntries(formData);
   if (intent == 1) {
-    const response = await fetch("http://localhost:8000/user", {
+    const response = await fetch("https://kigokido.onrender.com/user", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
