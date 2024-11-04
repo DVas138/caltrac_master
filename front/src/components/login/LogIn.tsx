@@ -27,6 +27,7 @@ export async function action({ request }: { request: any }) {
   }
 }
 export default function LogIn() {
+  // @ts-ignore
   return (
     <>
       <div className="flex h-screen bg-gradient-to-r from-purple-500 to-pink-500 flex-1 flex-col justify-center px-6 py-12 lg:px-8">

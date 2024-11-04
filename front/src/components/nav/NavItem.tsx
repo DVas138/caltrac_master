@@ -9,7 +9,7 @@ export default function NavItem({
   link: string;
 }) {
   return (
-    <Link to={link}>
+    <Link to={link} className={"w-fit"}>
       <img
         loading="lazy"
         src={src}

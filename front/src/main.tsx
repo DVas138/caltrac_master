@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./output.css";
-// import FromBuilder from "./components/Main.tsx";
-// import "./curcilar.css";
-// import Builder from "./Builder.tsx";
+import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LogIn, {
   action as loginAction,

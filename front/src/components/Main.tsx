@@ -4,7 +4,7 @@ import FooterBar from "./footer/FooterBar.tsx";
 
 export default function RootComponent() {
   return (
-    <div className="flex flex-col w-screen h-screen ">
+    <div className="flex flex-col h-dvh ">
       <NarBar />
       <Outlet />
       <FooterBar />

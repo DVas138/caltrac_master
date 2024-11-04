@@ -4,9 +4,11 @@ import { Food } from "./InputFood";
 export default function BarcodeScanner({
   onScan,
   onReady,
+  className,
 }: {
   onScan: Dispatch<SetStateAction<Food>>;
   onReady: Dispatch<SetStateAction<boolean>>;
+  className: string;
 }) {
   const [result, setResult] = useState("");
   const [amount, setAmount] = useState(100);
@@ -47,7 +49,7 @@ export default function BarcodeScanner({
     handleScan(result);
   }, [result]);
   return (
-    <div>
+    <div className={className}>
       <video className="rounded-2xl shadow-xl" ref={ref} />
       <div className="mt-2">
         <label

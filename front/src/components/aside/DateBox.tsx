@@ -1,7 +1,7 @@
 export default function DateBox({ date }: { date: string[] | string }) {
   if (typeof date === "string") date = [date];
   const dates = date.map((date, index) => (
-    <li>
+    <li key={index}>
       {index === 1 ? (
         <hr className="h-px border-y-2 border-gray-600 rounded mb-0.5 " />
       ) : (

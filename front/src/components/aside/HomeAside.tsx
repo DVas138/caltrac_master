@@ -1,11 +1,9 @@
 // const date: string = "27 | 05";
 import DateBox from "./DateBox.tsx";
 export default function HomeAside({ week }: { week: string[] }) {
-  const weekDates = week
-    .map((date) => {
-      return new Date(date).toLocaleString().split(",")[0];
-    })
-    .reverse();
+  const weekDates = week.map((date) => {
+    return new Date(date).toLocaleString().split(",")[0];
+  });
   return (
     <aside className="flex flex-col px-3 py-10 text-lg text-center text-rose-500 rounded-e-3xl bg-slate-800 my-16">
       <DateBox date={weekDates[0]} />

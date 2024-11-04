@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useRef } from "react";
 import { Food } from "./InputFood.tsx";
 
+import imgURL from "../../../public/food_cover.svg";
 export default function ManualInput({
   onScan,
   onReady,
@@ -112,7 +113,8 @@ export default function ManualInput({
               calories:
                 data.product.nutriments["energy-kcal_100g"] *
                 (amount.current.valueAsNumber / 100),
-              img: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&",
+              // img: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&",
+              img: imgURL,
               amount: amount.current.valueAsNumber,
               barcode: barcode.current.valueAsNumber,
             });
@@ -123,13 +125,13 @@ export default function ManualInput({
             barcode.current &&
             name.current.value.length !== 0
           ) {
-            console.log("!!!!");
             onScan({
               name: name.current.value,
               calories:
                 calories.current.valueAsNumber *
                 (amount.current.valueAsNumber / 100),
-              img: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&",
+              // img: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&",
+              img: imgURL,
               amount: amount.current.valueAsNumber,
               barcode: 0,
             });
@@ -137,7 +139,8 @@ export default function ManualInput({
             onScan({
               name: "No Input Data",
               calories: 0,
-              img: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&",
+              // img: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6be1c74ad0f3bb3710f887d49671427be75ba3922f2cf1e3ade755bfde6d271?apiKey=ea474bbdb6aa47209952665d35262dd2&",
+              img: imgURL,
               amount: 0,
               barcode: 0,
             });

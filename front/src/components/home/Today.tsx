@@ -65,7 +65,7 @@ export default function Today() {
       <section className="flex flex-col justify-between mx-auto my-16 max-md:max-w-full">
         <article className="flex flex-row px-16 pt-3.5 pb-7 mx-auto mt-36 rounded-2xl shadow-sm backdrop-blur-[2px] bg-white bg-opacity-70 max-md:px-5 max-md:mr-2.5 max-md:max-w-full">
           <ProgressBar goals={todayData.goal} byNow={todayData.calories} />
-          <div className="flex flex-col grow gap-2.5 text-2xl text-white whitespace-nowrap max-md:mt-10 max-md:max-w-full">
+          <div className="flex flex-col grow gap-2.5 p-1 text-2xl text-white border-2 whitespace-nowrap max-md:mt-10 max-md:max-w-full">
             {todayData.foods.map((food: any) => (
               <FoodCard
                 key={food.id}

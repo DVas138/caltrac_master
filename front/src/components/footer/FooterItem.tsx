@@ -6,7 +6,7 @@ export default function FooterItem({ text }: { text: string }) {
         alt="Special Footer Image 1"
         className="shrink-0 aspect-[1.1] w-[23px]"
       />
-      <span>{text}</span>
+      <span className={"text-slate-50"}>{text}</span>
     </div>
   );
 }
